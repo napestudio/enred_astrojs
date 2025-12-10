@@ -1,13 +1,53 @@
 ---
-import Logo from '../assets/logo.svg';
+import Logo from "../assets/logo.svg";
+
+const { titulo, description, imagen } = Astro.props;
 ---
-<header class="cabecera">
-  <div class="contenedor cabecera__contenido">
-    <Logo class="cabecera__logo" />
-    <nav class="cabecera__navegacion">
-      <a href="/">Inicio</a>
-      <a href="/nosotros">Nosotros</a>
-      <a href="/servicios">Servicios</a>
-      <a href="/contacto">Contacto</a>
-    </nav>
-  </div>
+
+<section class="cabecera-section">
+  <header class="cabecera">
+    <div class="cabecera__contenido">
+      <h1 class="cabecera__titulo">{titulo}</h1>
+      <p class="cabecera__descripcion">{description}</p>
+    </div>
+    <div class="cabecera__imagen">
+      <img src={imagen.url} alt={imagen.alt} />
+    </div>
+  </header>
+</section>
+
+<style>
+  .cabecera-section {
+    padding: 2rem;
+    background-color: #d92e2e;
+    min-height: 80vh;
+  }
+  .cabecera {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 2rem;
+    
+  }
+
+  .cabecera__contenido {
+    max-width: 60%;
+  }
+
+  .cabecera__titulo {
+    font-size: 2.5rem;
+    margin-bottom: 1rem;
+    color: #fafafa;
+  }
+
+  .cabecera__descripcion {
+    font-size: 1.25rem;
+    color: #666;
+  }
+
+  .cabecera__imagen img {
+    max-width: 300px;
+    height: auto;
+    border-radius: 8px;
+  }
+</style>
