@@ -8,9 +8,15 @@ importers:
 
   .:
     dependencies:
+      '@prismicio/client':
+        specifier: ^7.21.0
+        version: 7.21.0
       astro:
         specifier: ^5.15.4
         version: 5.16.4(@types/node@24.10.2)(rollup@4.53.3)(typescript@5.9.3)
+      prismic-dom:
+        specifier: ^2.2.7
+        version: 2.2.7
 
 packages:
 
@@ -353,6 +359,16 @@ packages:
 
   '@oslojs/encoding@1.1.0':
     resolution: {integrity: sha512-70wQhgYmndg4GCPxPPxPGevRKqTIJ2Nh4OkiMWmDAVYsTQ+Ta7Sq+rPevXyXGdzr30/qZBnyOalCszoMxlyldQ==}
+
+  '@prismicio/client@7.21.0':
+    resolution: {integrity: sha512-9FWmywGC4nAsgrVk6khRJQ6Qvzb/KwbwsVqfHIM+N/Hxxn+V34u+L/X1XzCxwMdGWF5lvH8lLmmrOLowpO4KVA==}
+    engines: {node: '>=14.15.0'}
+
+  '@prismicio/helpers@1.2.0':
+    resolution: {integrity: sha512-YsOfGgauGeTC5Co8zXvz278Lc/V3fyNaAPTs/y4gGrLmLhYa/eT7+USYvDB9RhKEPhYFnUqBiGWa+3l7BksYOQ==}
+
+  '@prismicio/richtext@1.1.0':
+    resolution: {integrity: sha512-925JuFiZiIkwu9jmlR9O/U8xCSZk/Y6BQDXKpavoVsKo+n90ml1hGdtWkglIupX+ITQO1ZINyDgUgiY1oG9dsA==}
 
   '@rollup/pluginutils@5.3.0':
     resolution: {integrity: sha512-5EdhGZtnu3V88ces7s53hhfK5KSASnJZv8Lulpc04cWO3REESroJXg73DFsOmgbU2BhwV0E20bu2IDZb3VKW4Q==}
@@ -758,6 +774,9 @@ packages:
     engines: {node: '>=18'}
     hasBin: true
 
+  escape-html@1.0.3:
+    resolution: {integrity: sha512-NiSupZ4OeuGwr68lGIeym/ksIZMJodUGOSCZ/FSnTxcrekbvqrgdUxlJOMpijaKZVjAJrWrGs/6Jy8OMuyj9ow==}
+
   escape-string-regexp@5.0.0:
     resolution: {integrity: sha512-/veY75JbMK4j1yjvuUxuVsiS/hr/4iHs9FTT6cgTexxdE0Ly/glccBAkloH/DofkjRbZU3bnoj38mOmhkZ0lHw==}
     engines: {node: '>=12'}
@@ -849,6 +868,10 @@ packages:
 
   http-cache-semantics@4.2.0:
     resolution: {integrity: sha512-dTxcvPXqPvXBQpq5dUr6mEMJX4oIEFv6bwom3FDwKRDsuIjjJGANqhBuoAn9c1RQJIdAKav33ED65E2ys+87QQ==}
+
+  imgix-url-builder@0.0.6:
+    resolution: {integrity: sha512-lFVbvaE9vMck8qz9j+y6o7vsyc1vZhdqzWu+Wp/nlnOCi9zAErc31QMkZKYUGMNLLzxOO4YIBAUPndTPah8HFg==}
+    engines: {node: '>=12.7.0'}
 
   import-meta-resolve@4.2.0:
     resolution: {integrity: sha512-Iqv2fzaTQN28s/FwZAoFq0ZSs/7hMAHJVX+w8PZl3cY19Pxk6jFFalxQoIfW2826i/fDLXv8IiEZRIT0lDuWcg==}
@@ -1115,6 +1138,10 @@ packages:
   postcss@8.5.6:
     resolution: {integrity: sha512-3Ybi1tAuwAP9s0r1UQ2J4n5Y0G05bJkpUIO0/bI9MhwmD70S5aTWbXGBwxHrelT+XM1k6dM0pk+SwNkpTRN7Pg==}
     engines: {node: ^10 || ^12 || >=14}
+
+  prismic-dom@2.2.7:
+    resolution: {integrity: sha512-4rJWzBqq/6h15giAzB6L8+eaWLQJrQcM4EAicmtw3mI8DhussbJOgheTeFtTCgvO7e5QEjZA0he5gEbQYfKGmg==}
+    deprecated: 'prismic-dom has moved to @prismicio/helpers! No worries, you''re safe to stay on prismic-dom but it will no longer receive updates nor fixes (excluding security ones). Upgrading to @prismicio/helpers should be straightforward for most users, if any doubt check out the migration guide: https://prismic.io/docs/technologies/prismic-helpers-v2-migration-guide or reach out to us on our community forum: https://community.prismic.io'
 
   prismjs@1.30.0:
     resolution: {integrity: sha512-DEvV2ZF2r2/63V+tK8hQvrR2ZGn10srHbXviTlcv7Kpzw8jWiNTqbVgjO3IY8RxrrOUF8VPMQQFysYYYv0YZxw==}
@@ -1753,6 +1780,14 @@ snapshots:
 
   '@oslojs/encoding@1.1.0': {}
 
+  '@prismicio/client@7.21.0':
+    dependencies:
+      imgix-url-builder: 0.0.6
+
+  '@prismicio/helpers@1.2.0': {}
+
+  '@prismicio/richtext@1.1.0': {}
+
   '@rollup/pluginutils@5.3.0(rollup@4.53.3)':
     dependencies:
       '@types/estree': 1.0.8
@@ -2202,6 +2237,8 @@ snapshots:
       '@esbuild/win32-ia32': 0.25.12
       '@esbuild/win32-x64': 0.25.12
 
+  escape-html@1.0.3: {}
+
   escape-string-regexp@5.0.0: {}
 
   estree-walker@2.0.2: {}
@@ -2350,6 +2387,8 @@ snapshots:
   html-void-elements@3.0.0: {}
 
   http-cache-semantics@4.2.0: {}
+
+  imgix-url-builder@0.0.6: {}
 
   import-meta-resolve@4.2.0: {}
 
@@ -2785,6 +2824,12 @@ snapshots:
       nanoid: 3.3.11
       picocolors: 1.1.1
       source-map-js: 1.2.1
+
+  prismic-dom@2.2.7:
+    dependencies:
+      '@prismicio/helpers': 1.2.0
+      '@prismicio/richtext': 1.1.0
+      escape-html: 1.0.3
 
   prismjs@1.30.0: {}
 

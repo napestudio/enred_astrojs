@@ -1,11 +1,21 @@
 ---
+import { RichTextNodeType } from '@prismicio/client';
 import Welcome from '../components/Welcome.astro';
 import Layout from '../layouts/Layout.astro';
 
 // Welcome to Astro! Wondering what to do next? Check out the Astro documentation at https://docs.astro.build
 // Don't want to use any of this? Delete everything in this file, the `assets`, `components`, and `layouts` directories, and start fresh.
+
+
+import { getHomePage } from '../prismic';
+const page = await getHomePage();
+console.log("🚀 ~ page:", page.results[0].data)
+const homeData = page.results[0].data;
+const { titulo, description, imagen } = homeData;
+
+// investigar serve island
 ---
 
 <Layout>
-	<Welcome />
+	<Welcome titulo={titulo[0].text} description={description} imagen={imagen} />
 </Layout>
