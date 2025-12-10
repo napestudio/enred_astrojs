@@ -1,6 +1,6 @@
 ---
 import { RichTextNodeType } from '@prismicio/client';
-import Welcome from '../components/Welcome.astro';
+import Cabecera from '../components/Cabecera.astro';
 import Layout from '../layouts/Layout.astro';
 
 // Welcome to Astro! Wondering what to do next? Check out the Astro documentation at https://docs.astro.build
@@ -17,5 +17,5 @@ const { titulo, description, imagen } = homeData;
 ---
 
 <Layout>
-	<Welcome titulo={titulo[0].text} description={description} imagen={imagen} />
+	<Cabecera />
 </Layout>
