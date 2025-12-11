@@ -1,12 +1,15 @@
 ---
-const { titulo, descripcion, imagen } = Astro.props;
+const {
+  primary: { titulo1, descripcion1 },
+  items,
+} = Astro.props;
 
 import Logo from "../assets/logo.svg";
 import { Image } from "astro:assets";
-import * as prismicH from '@prismicio/helpers';
+import * as prismicH from "@prismicio/helpers";
 
-const descripcionTexto = prismicH.asHTML(descripcion);
-
+const tituloTexto = prismicH.asHTML(titulo1);
+const descripcionTexto = prismicH.asHTML(descripcion1);
 ---
 
 <section class="min-h-screen">
@@ -14,17 +17,20 @@ const descripcionTexto = prismicH.asHTML(descripcion);
     class="flex flex-col md:flex-row items-center justify-center min-h-screen p-8 bg-gray-100"
   >
     <div class="cabecera__contenido">
-      <h1 class="font-bold text-4xl">{titulo}</h1>
+      <h1 class="font-bold text-4xl"><div set:html={tituloTexto} /></h1>
       <div set:html={descripcionTexto} />
     </div>
     <div class="max-w-xs md:ml-16 mt-8 md:mt-0">
-      <Image
+      {items.map((item: any) => <div set:html={prismicH.asHTML(item.datos)}/>)}
+      {
+        /* <Image
         src={imagen.url}
         alt={imagen.alt}
         width={300}
         height={300}
         class="w-[300px] aspect-square rounded-lg"
-      />
+      />*/
+      }
     </div>
   </header>
 </section>

@@ -10,7 +10,9 @@
   },
   "dependencies": {
     "@prismicio/client": "^7.21.0",
+    "@tailwindcss/vite": "^4.1.17",
     "astro": "^5.15.4",
-    "prismic-dom": "^2.2.7"
+    "@prismicio/helpers": "^2.0.0",
+    "tailwindcss": "^4.1.17"
   }
 }

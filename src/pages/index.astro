@@ -8,14 +8,13 @@ import Layout from '../layouts/Layout.astro';
 
 
 import { getHomePage } from '../prismic';
+import PrismicContent from '../components/PrismicContent.astro';
 const page = await getHomePage();
-console.log("🚀 ~ page:", page.results[0].data)
-const homeData = page.results[0].data;
-const { titulo, description, imagen } = homeData;
+const homeData = page.results[0].data.body;
 
 // investigar serve island
 ---
 
 <Layout>
-	<Cabecera titulo={titulo[0].text} description={description} imagen={imagen} />
+	<PrismicContent content={homeData} />
 </Layout>

@@ -1,0 +1,25 @@
+---
+
+const { content } = Astro.props;
+
+import Cabecera from './slices/Cabecera.astro'
+import Nosotros from './slices/Nosotros.astro'
+import Soluciones from './slices/Soluciones.astro'
+import Trabajos from './slices/Trabajos.astro'
+import Clientes from './slices/Clientes.astro'
+import Contactos from './slices/Contactos.astro'
+
+---
+
+
+{content.map((slice: any) => {
+    switch (slice.slice_type) {
+        case 'cabecera': return <Cabecera {...slice} />
+        case 'nosotros': return <Nosotros {...slice} />
+        case 'soluciones': return <Soluciones {...slice} />;
+        case 'trabajos': return <Trabajos {...slice} />;
+        case 'clientes': return <Clientes {...slice} />;
+        case 'contactos': return <Contactos {...slice} />
+        
+    }
+})}

@@ -1,0 +1,9 @@
+---
+import * as prismicH from '@prismicio/helpers';
+
+const { content } = Astro.props;
+
+const html = prismicH.asHTML(content);
+---
+
+{html}
