@@ -1,0 +1,30 @@
+---
+const { titulo, descripcion, imagen } = Astro.props;
+
+import Logo from "../assets/logo.svg";
+import { Image } from "astro:assets";
+import * as prismicH from '@prismicio/helpers';
+
+const descripcionTexto = prismicH.asHTML(descripcion);
+
+---
+
+<section class="min-h-screen">
+  <header
+    class="flex flex-col md:flex-row items-center justify-center min-h-screen p-8 bg-gray-100"
+  >
+    <div class="cabecera__contenido">
+      <h1 class="font-bold text-4xl">{titulo}</h1>
+      <div set:html={descripcionTexto} />
+    </div>
+    <div class="max-w-xs md:ml-16 mt-8 md:mt-0">
+      <Image
+        src={imagen.url}
+        alt={imagen.alt}
+        width={300}
+        height={300}
+        class="w-[300px] aspect-square rounded-lg"
+      />
+    </div>
+  </header>
+</section>

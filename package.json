@@ -9,6 +9,10 @@
     "astro": "astro"
   },
   "dependencies": {
-    "astro": "^5.15.4"
+    "@prismicio/client": "^7.21.0",
+    "@tailwindcss/vite": "^4.1.17",
+    "astro": "^5.15.4",
+    "@prismicio/helpers": "^2.0.0",
+    "tailwindcss": "^4.1.17"
   }
 }
